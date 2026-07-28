@@ -5,9 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 function Home({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen</Text>
+      <Text>Tela inicial</Text>
       <Button
-        title="Go to Profile"
+        title="teste"
         onPress={() => navigation.navigate('Profile')}
       />
     </View>
