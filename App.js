@@ -7,7 +7,7 @@ function Home({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home screen</Text>
       <Button
-        title="Go to Profile"
+        title="Tela inicial do app"
         onPress={() => navigation.navigate('Profile')}
       />
     </View>
