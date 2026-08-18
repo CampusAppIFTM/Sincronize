@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536202565917",
+    "project_id": "authmathzy",
+    "storage_bucket": "authmathzy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536202565917:android:5f13c4a9fb8c6b071b29f4",
+        "android_client_info": {
+          "package_name": "br.edu.iftm.Matheus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536202565917-4lb1cbrsuimidsh36j01kakg4k8s714m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL5ghKBktc0_YoMKFWn624crTdKzm3Grk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536202565917-4lb1cbrsuimidsh36j01kakg4k8s714m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
