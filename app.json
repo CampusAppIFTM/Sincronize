@@ -17,7 +17,7 @@
     },
     "android": {
       "googleServicesFile": "./google-services.json",
-      "package": "br.edu.iftm",
+      "package": "br.edu.iftm.laracampos",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

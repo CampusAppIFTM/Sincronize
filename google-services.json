@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:78883926102:android:3d4cbc4d3f4c0a1b7b8bf7",
+        "mobilesdk_app_id": "1:78883926102:android:d87c76842e644fac7b8bf7",
         "android_client_info": {
-          "package_name": "br.edu.iftm"
+          "package_name": "br.edu.iftm.laracampos"
         }
       },
       "oauth_client": [

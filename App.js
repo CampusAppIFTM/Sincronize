@@ -1,37 +1,88 @@
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, Text, View, Button, ActivityIndicator, Image } from "react-native";
+import { useState } from "react";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 
-function Home({ navigation }) {
+//funções de autenticação
+export const onLogin = async () => {
+  const user = await GoogleSignin.signIn();
+  return user;
+};
+
+export const onLogout = async () => {
+  return await GoogleSignin.signOut();
+};
+
+GoogleSignin.configure({
+  webClientId: "78883926102-0cn22go4l07u6lfn6h47hcvn8c425vtc.apps.googleusercontent.com",
+});
+
+// Telas
+const LoginScreen = ({ login, setUser }) => {
+  const [isSigninInProgress, setIsSigninInProgress] = useState(false);
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home screen</Text>
+    <View style={styles.layout}>
+      {isSigninInProgress && <ActivityIndicator />}
+      <Text style={styles.title}>Login</Text>
       <Button
-        title="Tela inicial do app"
-        onPress={() => navigation.navigate('Profile')}
+        title="entrar"
+        onPress={() => {
+          setIsSigninInProgress(true);
+          onLogin().then(dadosAuth => {
+            console.log(dadosAuth);
+            setUser(dadosAuth.data.user);
+            login(true);
+          });
+        }}
       />
     </View>
   );
-}
+};
 
-function Profile() {
+const HomeScreen = ({ login, user }) => (
+  <View style={styles.layout}>
+    <Text style={styles.title}>Home</Text>
+    <Text style={styles.text}>Bem vindo {user.name}</Text>
+    <Image
+      source={{ uri: user.photo }}
+      style={{ width: 100, height: 100, borderRadius: 50, marginBottom: 16 }}
+    />
+    <Button title="Sair" onPress={() => onLogout().then(() => login(false))} />
+  </View>
+);
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile screen</Text>
+    <View style={styles.container}>
+      {isAuthenticated ? (
+        <HomeScreen login={setIsAuthenticated} user={user} />
+      ) : (
+        <LoginScreen login={setIsAuthenticated} setUser={setUser} />
+      )}
     </View>
   );
-}
+};
 
-const Stack = createStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Profile" component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  layout: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 32,
+    marginBottom: 16,
+  },
+  text: {
+    fontSize: 14,
+    marginBottom: 16,
+  },
+});
