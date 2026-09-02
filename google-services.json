@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "693511095580",
+    "project_id": "sincronize-428a0",
+    "storage_bucket": "sincronize-428a0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693511095580:android:5cf79a06c257524f8fa6d9",
+        "android_client_info": {
+          "package_name": "br.edu.iTfm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693511095580-6mqi78907qfil15od4ev8dt061gnlqcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMtDUCUi3sP_D41od8RjQeGq85kaZGF4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693511095580-6mqi78907qfil15od4ev8dt061gnlqcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
