@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "366359474086",
+    "project_id": "autentificacao-alex",
+    "storage_bucket": "autentificacao-alex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366359474086:android:7beb0cdec64dbfb2bce967",
+        "android_client_info": {
+          "package_name": "br.edu.iftm.ALexandre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366359474086-2inu1np9ru6undb858ip8ujkgfcmqbs9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.iftm.ALexandre",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "366359474086-hdr1vcijv1o5bjvavvdqhbt8nm7g3tiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEVC2U7BawwusgYGdeqwqgOBRqwMqB-nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366359474086-024qv73shke0nvncjhb6h4euh8bsb83h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
