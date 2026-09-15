@@ -42,8 +42,7 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Minha Agenda</Text>
-      <Text style={styles.subtitulo}>Entre para continuar</Text>
+      <Text style={styles.titulo}>Sincronize</Text>
 
       {/*
         GoogleSigninButton é o botão oficial. Além de pronto, ele atende às
@@ -76,6 +75,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
     padding: 24,
+    // backgroundImage: require('../../')
   },
   titulo: {
     fontSize: 32,

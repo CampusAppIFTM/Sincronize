@@ -11,7 +11,7 @@
  * ---------------------------------------------------------------------------
  */
 import { useState } from "react";
-import { View, Text, Image, Button, StyleSheet } from "react-native";
+import { View, Text, Image, Button, StyleSheet, ImageBackground, Pressable } from "react-native";
 
 import { sair } from "../services/autenticacao";
 
@@ -32,12 +32,10 @@ const HomeScreen = ({ usuario }) => {
 
   return (
     <View style={styles.container}>
-      {/*
-        photoURL pode ser null (contas sem foto). O operador ternário evita
-        passar { uri: null } para o Image, que resulta em um quadro em branco.
-      */}
       {usuario.photoURL ? (
-        <Image style={styles.foto} source={{ uri: usuario.photoURL }} />
+        <Pressable style={styles.botaoSair} onPress={aoSair}>
+          <Image style={styles.foto} source={{ uri: usuario.photoURL }} />
+        </Pressable>
       ) : (
         <View style={[styles.foto, styles.fotoVazia]}>
           <Text style={styles.inicial}>
@@ -46,14 +44,14 @@ const HomeScreen = ({ usuario }) => {
         </View>
       )}
 
-      {/* ?? cobre o caso de displayName ser null, não apenas undefined. */}
-      <Text style={styles.nome}>Olá, {usuario.displayName ?? "usuário"}!</Text>
-      <Text style={styles.email}>{usuario.email}</Text>
-      <Text style={styles.uid}>uid: {usuario.uid}</Text>
 
-      <View style={styles.botao}>
-        <Button title="Sair" onPress={aoSair} disabled={saindo} />
-      </View>
+      <ImageBackground source={require('../../assets/Sincronize.png')} style={{ flex: 1 }} resizeMode="contain" />
+      {/*
+        photoURL pode ser null (contas sem foto). O operador ternário evita
+        passar { uri: null } para o Image, que resulta em um quadro em branco.
+      */}
+      {/* ?? cobre o caso de displayName ser null, não apenas undefined. */}
+
     </View>
   );
 };
@@ -63,14 +61,24 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
-    padding: 24,
+    // alignItems: "center",
+    // justifyContent: "center",
+    // backgroundColor: "#fff",
+    padding: 8,
+  },
+  botaoSair: {
+    position: 'absolute',
+    right: 9,
+    top: 107,
+    zIndex:1,
+    width: 40,
+    height: 40,
+    borderRadius: 70,
+    marginBottom: 24,
   },
   foto: {
-    width: 140,
-    height: 140,
+    width: 40,
+    height: 40,
     borderRadius: 70,
     marginBottom: 24,
   },
