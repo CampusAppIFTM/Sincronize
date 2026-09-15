@@ -21,7 +21,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "br.edu.iftm"
+      "package": "br.edu.iftm.ALexandre"
     },
     "web": {
       "favicon": "./assets/favicon.png"
